@@ -14,7 +14,6 @@
 
 
 	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-	<script src="../src/L.Control.WebatlasAttribution.js"></script>
 	<script src="../src/L.TileLayer.Webatlas.js"></script>
 	<script>
 
@@ -22,11 +21,11 @@
 			attributionControl: false,
 		}).setView([63.505, 10.09], 13);
 
-		L.control.WebatlasAttribution().addTo(map);
+		//L.control.WebatlasAttribution().addTo(map);
 
 		var wa_hybrid = new L.TileLayer.Webatlas(
         {
-	        mapType: L.TileLayer.Webatlas.Type.HYBRID, //VECTOR | AERIAL
+	        mapType: L.TileLayer.Webatlas.Type.GREY, //VECTOR | AERIAL
 	        maxZoom: 20,
 	        minZoom: 0,
 	        apikey: '2564333f-3201-4cee-adaf-d3beaf650208'
