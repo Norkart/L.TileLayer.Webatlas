@@ -13,5 +13,5 @@ http://waapi.webatlas.no/maptiles/tiles/webatlas-standard-hybrid/wa_grid/{z}/{x}
 
 complete list
 ```
-http://waapi.webatlas.no/maptiles/wmts/1.0.0/WMTSCapabilities.xml?apitoken=49d5f85f-7bec-4df3-84ae-2107b46da79e
+http://waapi.webatlas.no/maptiles/wmts/1.0.0/WMTSCapabilities.xml?apitoken=[nøkkel]
 ``` 
