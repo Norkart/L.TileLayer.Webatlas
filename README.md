@@ -1,5 +1,32 @@
-# L.TileLayer.Webatlas
+L.TileLayer.Webatlas
+====================
 Leaflet plugin to use Webatlas tilecache with correct attribution and apikey's. Requires only vanilla Leaflet. 
+
+Usage
+-----
+Instantiate a new layer just as you would instantiate a new TileLayer, just remember the API token:
+
+    L.tileLayer.webatlas({apikey: 'my-api-key'}).addTo(map);
+
+To specify another layer:
+
+    L.tileLayer.webatlas({apikey: 'my-api-key', mapType: L.TileLayer.Webatlas.Type.GREY}).addTo(map);
+
+
+
+Options
+-------
+
+- mapType: one of L.TileLayer.Webatlas.Type (Default: L.TileLayer.Webatlas.Type.VECTOR)
+- apiKey: a Webatlas Api Token (contact us!)
+
+
+Building
+--------
+1. Install dependencies: ```npm install```
+2. Run ```gulp dist```
+
+
 
 Tilecache-urls (only few implemented)
 ```
@@ -17,7 +44,4 @@ http://waapi.webatlas.no/maptiles/wmts/1.0.0/WMTSCapabilities.xml?apitoken=[nøk
 ``` 
 
 
-Building
---------
-1. Install dependencies: ```npm install```
-2. Run ```gulp dist```
+

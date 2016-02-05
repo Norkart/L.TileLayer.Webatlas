@@ -60,12 +60,13 @@
                 {apikey: this.options.apikey}
             );
 
-            if (!this.options.tileset[this.options.mapType]) {
+            var mapType = this.options.mapType || L.TileLayer.Webatlas.Type.VECTOR;
+            if (!this.options.tileset[mapType]) {
                 throw new Error('Unknown map type!');
             }
             this.options.url = doTemplate(
                 this.options.url,
-                this.options.tileset[this.options.mapType]
+                this.options.tileset[mapType]
             );
             console.log(this.options.url);
             this.setUrl(this.options.url);
@@ -176,6 +177,10 @@
             return t_oddNodes;
         }
     });
+
+    L.tileLayer.webatlas = function (layer, options) {
+        return new L.TileLayer.Webatlas(layer, options);
+    };
 
     //Enumeration of the type of layers we offer
     L.TileLayer.Webatlas.Type = {
