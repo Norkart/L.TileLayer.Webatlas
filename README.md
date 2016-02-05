@@ -2,6 +2,7 @@ L.TileLayer.Webatlas
 ====================
 Leaflet plugin to use Webatlas tilecache with correct attribution and apikey's. Requires only vanilla Leaflet. 
 
+
 Usage
 -----
 Instantiate a new layer just as you would instantiate a new TileLayer, just remember the API token:
@@ -12,6 +13,7 @@ To specify another layer:
 
     L.tileLayer.webatlas({apikey: 'my-api-key', mapType: L.TileLayer.Webatlas.Type.GREY}).addTo(map);
 
+See examples/example.html for example use.
 
 
 Options
@@ -38,7 +40,7 @@ http://waapi.webatlas.no/maptiles/tiles/webatlas-orto-newup/wa_grid/{z}/{x}/{y}.
 http://waapi.webatlas.no/maptiles/tiles/webatlas-standard-hybrid/wa_grid/{z}/{x}/{y}.jpeg?apitoken=[nøkkel]
 ```
 
-complete list
+complete list of available layers
 ```
 http://waapi.webatlas.no/maptiles/wmts/1.0.0/WMTSCapabilities.xml?apitoken=[nøkkel]
 ``` 
