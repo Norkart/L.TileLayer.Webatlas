@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>L.TileLayer.Webatlas Example</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+</head>
+<body>
+    <h1>L.TileLayer.Webatlas Example</h1>
+    <div id="map" style="width: 600px; height: 400px"></div>
+
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="../L.TileLayer.Webatlas.min.js"></script>
+    <script>
+
+
+        //create a map
+        var map = L.map('map', {
+            attributionControl: false,
+        }).setView([63.505, 10.09], 13);
+
+        var apikey = '2564333f-3201-4cee-adaf-d3beaf650208';
+
+        var baseLayers = {
+            'Kart': L.tileLayer.webatlas({
+                mapType: L.TileLayer.Webatlas.Type.VECTOR,
+                apikey: apikey
+            }).addTo(map),
+            'Kart, Gråtone': L.tileLayer.webatlas({
+                mapType: L.TileLayer.Webatlas.Type.GREY,
+                apikey: apikey
+            }),
+            'Kart, medium': L.tileLayer.webatlas({
+                mapType: L.TileLayer.Webatlas.Type.MEDIUM,
+                apikey: apikey
+            }),
+            'Kart, lite': L.tileLayer.webatlas({
+                mapType: L.TileLayer.Webatlas.Type.LITE,
+                apikey: apikey
+            }),
+            'Foto': L.tileLayer.webatlas({
+                mapType: L.TileLayer.Webatlas.Type.AERIAL,
+                apikey: apikey
+            }),
+            'Hybrid': L.tileLayer.webatlas({
+                mapType: L.TileLayer.Webatlas.Type.HYBRID,
+                apikey: apikey
+            })
+        };
+
+        L.control.layers(baseLayers, {}).addTo(map);
+
+    </script>
+</body>
+</html>

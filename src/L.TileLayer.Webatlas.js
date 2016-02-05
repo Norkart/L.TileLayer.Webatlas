@@ -1,4 +1,3 @@
-
 (function () {
     'use strict';
 
@@ -30,7 +29,9 @@
                 vector: {tileset: 'webatlas-standard-vektor', ext: 'png'},
                 aerial: {tileset: 'webatlas-orto-newup', ext: 'jpeg'},
                 hybrid: {tileset: 'webatlas-standard-hybrid', ext: 'jpeg'},
-                grey: {tileset: 'webatlas-gray-vektor', ext: 'png'}
+                grey: {tileset: 'webatlas-gray-vektor', ext: 'png'},
+                medium: {tileset: 'webatlas-medium-vektor', ext: 'png'},
+                lite: {tileset: 'webatlas-lite-vektor', ext: 'png'}
             },
             mapType: 'vector',
             maxZoom: 20,
@@ -60,14 +61,14 @@
                 {apikey: this.options.apikey}
             );
 
-            if (!this.options.tileset[this.options.mapType]) {
+            var mapType = this.options.mapType || L.TileLayer.Webatlas.Type.VECTOR;
+            if (!this.options.tileset[mapType]) {
                 throw new Error('Unknown map type!');
             }
             this.options.url = doTemplate(
                 this.options.url,
-                this.options.tileset[this.options.mapType]
+                this.options.tileset[mapType]
             );
-            console.log(this.options.url);
             this.setUrl(this.options.url);
         },
 
@@ -77,6 +78,11 @@
             this._map.on('moveend', this._onMapMoved, this);
             this._onMapMoved();
             L.TileLayer.prototype.onAdd.call(this, map);
+        },
+
+        onRemove: function (map) {
+            map.off('moveend', this._onMapMoved, this);
+            L.TileLayer.prototype.onRemove.call(this, map);
         },
 
         _onMapMoved: function (e) {
@@ -177,12 +183,18 @@
         }
     });
 
+    L.tileLayer.webatlas = function (layer, options) {
+        return new L.TileLayer.Webatlas(layer, options);
+    };
+
     //Enumeration of the type of layers we offer
     L.TileLayer.Webatlas.Type = {
         VECTOR: 'vector',
         AERIAL: 'aerial',
         HYBRID: 'hybrid',
-        GREY: 'grey'
+        GREY: 'grey',
+        MEDIUM: 'medium',
+        LITE: 'lite'
     };
 
 }());
