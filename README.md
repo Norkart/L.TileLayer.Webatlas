@@ -7,3 +7,9 @@ complete list of available layers
 ```
 http://waapi.webatlas.no/maptiles/wmts/1.0.0/WMTSCapabilities.xml?apitoken=[nøkkel]
 ``` 
+
+
+Building
+--------
+1. Install dependencies: ```npm install```
+2. Run ```gulp dist```

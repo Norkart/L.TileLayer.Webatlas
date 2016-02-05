@@ -1,0 +1,29 @@
+{
+  "name": "L.TileLayer.Webatlas",
+  "version": "1.0.0",
+  "description": "Leaflet plugin to use Webatlas tilecache with correct attribution and apikey's. Requires only vanilla Leaflet.",
+  "main": "src/L.TileLayer.Webatlas.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Norkart/L.TileLayer.Webatlas.git"
+  },
+  "author": "",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/Norkart/L.TileLayer.Webatlas/issues"
+  },
+  "homepage": "https://github.com/Norkart/L.TileLayer.Webatlas",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-uglify": "^1.5.1"
+  },
+  "dependencies": {
+    "gulp-header": "^1.7.1"
+  }
+}
