@@ -46,7 +46,7 @@
             //along with our specific options 
             L.Util.setOptions(this, options);
 
-            //Can't just use relative urls because the imgs are  added after the intial load
+            //Can't just use relative urls because the imgs are added after the initial load
             if (window.location.protocol === 'https:') {
                 this.options.url = 'https:' + this.options.url;
             } else {
@@ -89,11 +89,11 @@
             //get copyright text for current viewport
             var text = this._getCopyrightText();
 
-            //ad an attribution control if the default is disabled
+            //add an attribution control if the default is disabled
             if (!this._map.attributionControl)  {
                 this._map.attributionControl = L.control.attribution().addTo(this._map);
             }
-            //remove the previoius attribution we set
+            //remove the previous attribution we set
             this._map.attributionControl.removeAttribution(this._attribution);
 
             //set the new attribution
@@ -163,7 +163,7 @@
         },
 
         /**
-        * Checks wheter a point exists within a polygon
+        * Checks whether a point exists within a polygon
         */
         t_containsPoint: function (t_centerPoint, t_kommuneLat, t_kommuneLon) {
             var i, j = 0, t_polySides = t_kommuneLat.length, t_oddNodes = false;
