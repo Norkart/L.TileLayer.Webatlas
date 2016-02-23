@@ -1,6 +1,6 @@
 L.TileLayer.Webatlas
 ====================
-Leaflet plugin to use Webatlas tilecache with correct attribution and apikey's. Requires only vanilla Leaflet. 
+Leaflet plugin to use Webatlas tilecache with correct attribution and API keys. Requires only vanilla Leaflet. 
 
 
 Usage
@@ -20,7 +20,7 @@ Options
 -------
 
 - mapType: one of L.TileLayer.Webatlas.Type (Default: L.TileLayer.Webatlas.Type.VECTOR)
-- apiKey: a Webatlas Api Token (contact us!)
+- apiKey: a Webatlas API Token (contact us!)
 
 
 Building
