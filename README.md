@@ -5,7 +5,10 @@ Leaflet plugin to use Webatlas tilecache with correct attribution and API keys. 
 
 Usage
 -----
-Instantiate a new layer just as you would instantiate a new L.TileLayer, just remember the API token:
+
+1. Include the file ```L.TileLayer.Webatlas.js``` on your page.
+
+2. Instantiate a new layer just as you would instantiate a new L.TileLayer, just remember the API token:
 
     L.tileLayer.webatlas({apikey: 'my-api-key'}).addTo(map);
 
