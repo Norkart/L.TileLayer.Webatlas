@@ -1,6 +1,6 @@
 L.TileLayer.Webatlas
 ====================
-Leaflet plugin to use Webatlas tilecache with correct attribution and API keys. Requires only vanilla Leaflet. 
+Leaflet plugin to use Webatlas tilecache with correct attribution and API keys. Requires only vanilla Leaflet.
 
 
 Usage
@@ -19,31 +19,11 @@ See examples/example.html for example use.
 Options
 -------
 
-- mapType: one of L.TileLayer.Webatlas.Type (Default: L.TileLayer.Webatlas.Type.VECTOR)
-- apiKey: a Webatlas API Token (contact us!)
+- ```mapType```: one of L.TileLayer.Webatlas.Type (Default: L.TileLayer.Webatlas.Type.VECTOR)
+- ```apiKey```: a Webatlas API Token (contact us!)
 
 
 Building
 --------
 1. Install dependencies: ```npm install```
 2. Run ```gulp dist```
-
-
-
-Tilecache-urls (only few implemented)
-```
-http://waapi.webatlas.no/maptiles/tiles/webatlas-standard-vektor/wa_grid/{z}/{x}/{y}.png?apitoken=[nøkkel]
-http://waapi.webatlas.no/maptiles/tiles/webatlas-medium-vektor/wa_grid/{z}/{x}/{y}.png?apitoken=[nøkkel]
-http://waapi.webatlas.no/maptiles/tiles/webatlas-lite-vektor/wa_grid/{z}/{x}/{y}.png?apitoken=[nøkkel]
-http://waapi.webatlas.no/maptiles/tiles/webatlas-gray-vektor/wa_grid/{z}/{x}/{y}.png?apitoken=[nøkkel]
-http://waapi.webatlas.no/maptiles/tiles/webatlas-orto-newup/wa_grid/{z}/{x}/{y}.jpeg?apitoken=[nøkkel]
-http://waapi.webatlas.no/maptiles/tiles/webatlas-standard-hybrid/wa_grid/{z}/{x}/{y}.jpeg?apitoken=[nøkkel]
-```
-
-complete list of available layers
-```
-http://waapi.webatlas.no/maptiles/wmts/1.0.0/WMTSCapabilities.xml?apitoken=[nøkkel]
-``` 
-
-
-
