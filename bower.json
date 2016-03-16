@@ -1,0 +1,27 @@
+{
+  "name": "L.TileLayer.Webatlas",
+  "version": "0.0.3",
+  "homepage": "https://github.com/Norkart/L.TileLayer.Webatlas",
+  "authors": [
+    "Norkart AS"
+  ],
+  "license": "BSD-2-Clause",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "examples"
+  ],
+  "description": "Leaflet plugin to use Webatlas tilecache with correct attribution and apikey's. Requires only vanilla Leaflet.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Norkart/L.TileLayer.Webatlas.git"
+  },
+  "keywords": [
+    "maps",
+    "leaflet",
+    "client",
+    "tiles",
+    "norway"
+  ]
+}
