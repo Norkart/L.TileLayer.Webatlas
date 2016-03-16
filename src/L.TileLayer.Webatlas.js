@@ -21,7 +21,11 @@
         return string;
     }
 
-    L.TileLayer.Webatlas = L.TileLayer.extend({
+    if (typeof module !== 'undefined' && module.exports) {
+        L = require('leaflet');
+    }
+
+    var TileLayer = L.TileLayer.extend({
 
         options: {
             url: '//waapi.webatlas.no/maptiles/tiles/{tileset}/wa_grid/{z}/{x}/{y}.{ext}?APITOKEN={apikey}',
@@ -183,12 +187,8 @@
         }
     });
 
-    L.tileLayer.webatlas = function (layer, options) {
-        return new L.TileLayer.Webatlas(layer, options);
-    };
-
     //Enumeration of the type of layers we offer
-    L.TileLayer.Webatlas.Type = {
+    TileLayer.Type = {
         VECTOR: 'vector',
         AERIAL: 'aerial',
         HYBRID: 'hybrid',
@@ -196,5 +196,17 @@
         MEDIUM: 'medium',
         LITE: 'lite'
     };
+
+    var creator = function (layer, options) {
+        return new TileLayer(layer, options);
+    };
+
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports.WebatlasTileLayer = TileLayer;
+        module.exports.webatlasTileLayer = creator;
+    } else {
+        L.TileLayer.Webatlas = TileLayer;
+        L.tileLayer.webatlas = creator;
+    }
 
 }());

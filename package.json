@@ -13,8 +13,8 @@
     "type": "git",
     "url": "https://github.com/Norkart/L.TileLayer.Webatlas.git"
   },
-  "author": "",
-  "license": "none",
+  "author": "Norkart AS",
+  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/Norkart/L.TileLayer.Webatlas/issues"
   },
@@ -22,9 +22,10 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.1"
+    "gulp-uglify": "^1.5.1",
+    "gulp-header": "^1.7.1"
   },
   "dependencies": {
-    "gulp-header": "^1.7.1"
+    "leaflet": "^0.7.7"
   }
 }
