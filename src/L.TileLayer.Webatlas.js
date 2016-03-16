@@ -197,8 +197,8 @@
         LITE: 'lite'
     };
 
-    var creator = function (layer, options) {
-        return new TileLayer(layer, options);
+    var creator = function (options) {
+        return new TileLayer(options);
     };
 
     if (typeof module !== 'undefined' && module.exports) {
