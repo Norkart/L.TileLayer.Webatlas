@@ -19,9 +19,33 @@ To specify another layer:
 See examples/example.html for example use.
 
 
+Install using NPM
+-----------------
+
+Install the package
+
+    npm install leaflet-webatlastile --save
+
+
+And then use it
+
+    //the Object method
+    var TileLayer = require('leaflet-webatlastile').WebatlasTileLayer;
+
+    //The function method
+    var tileLayer = require('leaflet-webatlastile').webatlasTileLayer;
+
+
+Install using Bower
+-------------------
+
+    bower install leaflet-webatlastile
+
+
+
 Obtaining an API Token
 ----------------------
-Contact us for details.
+Contact Arild Nomeland (arild.nomeland@norkart.no) for pricing and trial tokens.
 
 
 Options
