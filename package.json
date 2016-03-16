@@ -1,5 +1,5 @@
 {
-  "name": "L.TileLayer.Webatlas",
+  "name": "leaflet-webatlastile",
   "version": "0.0.7",
   "description": "Leaflet plugin to use Webatlas tilecache with correct attribution and apikey's. Requires only vanilla Leaflet.",
   "main": "src/L.TileLayer.Webatlas.js",
