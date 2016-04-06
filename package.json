@@ -1,6 +1,6 @@
 {
   "name": "leaflet-webatlastile",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Leaflet plugin to use Webatlas tilecache with correct attribution and apikey's. Requires only vanilla Leaflet.",
   "main": "src/L.TileLayer.Webatlas.js",
   "keywords": [
