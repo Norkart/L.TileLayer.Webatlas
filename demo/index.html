@@ -19,32 +19,32 @@
         //create a map
         var map = L.map('map').setView([63.505, 10.09], 13);
 
-        var apikey = 'apikey';
+        var apiKey = '07C4A129-9D26-4B3D-9BC8-B22E4B6E509E'; //DO NOT USE THIS KEY: DEMO ONLY
 
         var baseLayers = {
             'Kart': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.VECTOR,
-                apikey: apikey
+                apikey: apiKey
             }).addTo(map),
             'Kart, Gråtone': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.GREY,
-                apikey: apikey
+                apikey: apiKey
             }),
             'Kart, medium': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.MEDIUM,
-                apikey: apikey
+                apikey: apiKey
             }),
             'Kart, lite': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.LITE,
-                apikey: apikey
+                apikey: apiKey
             }),
             'Foto': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.AERIAL,
-                apikey: apikey
+                apikey: apiKey
             }),
             'Hybrid': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.HYBRID,
-                apikey: apikey
+                apikey: apiKey
             })
         };
 

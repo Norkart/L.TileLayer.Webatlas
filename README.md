@@ -16,7 +16,7 @@ To specify another layer:
 
     L.tileLayer.webatlas({apikey: 'my-api-key', mapType: L.TileLayer.Webatlas.Type.GREY}).addTo(map);
 
-See examples/example.html for example use.
+See demo/index.html for example use.
 
 
 Install using NPM
