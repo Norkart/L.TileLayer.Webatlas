@@ -63,3 +63,9 @@ Building
 --------
 1. Install dependencies: ```npm install```
 2. Run ```gulp dist``` (Make sure you have gulp installed first, `npm install --global gulp-cli`)
+
+
+Demo
+----
+
+See <http://norkart.github.io/L.TileLayer.Webatlas/demo/>
