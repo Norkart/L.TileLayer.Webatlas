@@ -45,7 +45,25 @@
             'Hybrid': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.HYBRID,
                 apikey: apiKey
-            })
+            }),
+            'Custom-Kart': L.tileLayer.webatlas(
+                {
+                    mapType: 'vector',
+                    apikey: apiKey,
+                    tileset: {
+                        vector: {tileset: 'webatlas-1881-vektor', ext: 'png'}
+                    }
+                }
+            ),
+            'Custom-Hybrid': L.tileLayer.webatlas(
+                {
+                    mapType: 'hybrid',
+                    apikey: apiKey,
+                    tileset: {                        
+                        hybrid: {tileset: 'webatlas-1881-hybrid', ext: 'jpeg'}
+                    }
+                }
+            )
         };
 
         L.control.layers(baseLayers, {}).addTo(map);
