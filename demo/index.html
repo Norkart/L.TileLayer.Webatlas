@@ -47,17 +47,17 @@
                 apikey: apiKey
             }),
             'Custom-Kart': L.tileLayer.webatlas({
-                mapType: 'vector',
+                mapType: L.TileLayer.Webatlas.Type.VECTOR, //This is a constant with value 'vector'
                 apikey: apiKey,
                 tileset: {
-                    vector: {tileset: 'webatlas-1881-vektor', ext: 'png'}
+                    vector: {tileset: 'webatlas-1881-vektor', ext: 'png'} //We overwrite the default vector map with a custom tileset (also available on the same server)
                 }
             }),
             'Custom-Hybrid': L.tileLayer.webatlas({
-                mapType: 'hybrid',
+                mapType: L.TileLayer.Webatlas.Type.HYBRID, //This is a constant with value 'hybrid'
                 apikey: apiKey,
                 tileset: {                        
-                    hybrid: {tileset: 'webatlas-1881-hybrid', ext: 'jpeg'}
+                    hybrid: {tileset: 'webatlas-1881-hybrid', ext: 'jpeg'} //We overwrite the default hybrid map with a custom tileset (also available on the same server)
                 }
             })
         };
