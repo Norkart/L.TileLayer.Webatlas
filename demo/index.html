@@ -6,13 +6,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
 </head>
 <body>
     <h1>L.TileLayer.Webatlas Example</h1>
     <div id="map" style="width: 600px; height: 400px"></div>
 
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
     <script src="../L.TileLayer.Webatlas.min.js"></script>
     <script>
 
@@ -45,6 +45,20 @@
             'Hybrid': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.HYBRID,
                 apikey: apiKey
+            }),
+            'Custom-Kart': L.tileLayer.webatlas({
+                mapType: L.TileLayer.Webatlas.Type.VECTOR, //This is a constant with value 'vector'
+                apikey: apiKey,
+                tileset: {
+                    vector: {tileset: 'webatlas-1881-vektor', ext: 'png'} //We overwrite the default vector map with a custom tileset (also available on the same server)
+                }
+            }),
+            'Custom-Hybrid': L.tileLayer.webatlas({
+                mapType: L.TileLayer.Webatlas.Type.HYBRID, //This is a constant with value 'hybrid'
+                apikey: apiKey,
+                tileset: {                        
+                    hybrid: {tileset: 'webatlas-1881-hybrid', ext: 'jpeg'} //We overwrite the default hybrid map with a custom tileset (also available on the same server)
+                }
             })
         };
 
