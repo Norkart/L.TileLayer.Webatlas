@@ -57,7 +57,7 @@ Options
 
 - ```mapType```: one of L.TileLayer.Webatlas.Type (Default: L.TileLayer.Webatlas.Type.VECTOR)
 - ```apiKey```: a Webatlas API Token
-
+- ```attributionPosition```: Position of the attribution text.  Possible values are 'topleft', 'topright', 'bottomleft' or 'bottomright'. Default: 'bottomright'.
 
 Building
 --------
