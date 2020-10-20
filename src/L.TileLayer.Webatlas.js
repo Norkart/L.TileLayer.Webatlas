@@ -39,7 +39,8 @@
             },
             mapType: 'vector',
             maxZoom: 20,
-            minZoom: 0
+            minZoom: 0,
+            attributionPosition: 'bottomright'
         },
 
         initialize: function (options) {
@@ -80,8 +81,15 @@
             this._map = map;
             this._attribution = '';
             this._map.on('moveend', this._onMapMoved, this);
+
+            if (this._map.attributionControl) {
+                this._map.removeControl(this._map.attributionControl);
+                this._map.attributionControl = null;
+            }
+
             this._onMapMoved();
             L.TileLayer.prototype.onAdd.call(this, map);
+
         },
 
         onRemove: function (map) {
@@ -92,10 +100,11 @@
         _onMapMoved: function (e) {
             //get copyright text for current viewport
             var text = this._getCopyrightText();
-
             //add an attribution control if the default is disabled
             if (!this._map.attributionControl)  {
-                this._map.attributionControl = L.control.attribution().addTo(this._map);
+                this._map.attributionControl = L.control.attribution({
+                    position: this.options.attributionPosition
+                  }).addTo(this._map);
             }
             //remove the previous attribution we set
             this._map.attributionControl.removeAttribution(this._attribution);

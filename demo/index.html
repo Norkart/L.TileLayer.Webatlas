@@ -6,13 +6,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
     <h1>L.TileLayer.Webatlas Example</h1>
     <div id="map" style="width: 600px; height: 400px"></div>
 
-    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="../L.TileLayer.Webatlas.min.js"></script>
     <script>
 
@@ -24,7 +24,8 @@
         var baseLayers = {
             'Kart': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.VECTOR,
-                apikey: apiKey
+                apikey: apiKey,
+                attributionPosition: 'topright'
             }).addTo(map),
             'Kart, Gråtone': L.tileLayer.webatlas({
                 mapType: L.TileLayer.Webatlas.Type.GREY,
@@ -62,7 +63,7 @@
             })
         };
 
-        L.control.layers(baseLayers, {}).addTo(map);
+       L.control.layers(baseLayers, {}).addTo(map);
 
     </script>
 </body>
