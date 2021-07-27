@@ -36,20 +36,9 @@ And then use it
     var tileLayer = require('leaflet-webatlastile').webatlasTileLayer;
 
 
-Install using Bower
--------------------
-
-    bower install leaflet-webatlastile
-
-Using through a direct reference (CDN)
------------------
-You can also import the script directly from our hosted version
-
-    <script src="http://tsadm.webatlas.no/sh/leafletplugins/L.TileLayer.Webatlas/v1.0.0/L.TileLayer.Webatlas.min.js"></script>
-
 Obtaining an API Token
 ----------------------
-Contact Arild Nomeland (arild.nomeland@norkart.no) for pricing and trial tokens.
+See <developer.norkart.no>
 
 
 Options
