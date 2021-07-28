@@ -88,4 +88,4 @@ stages:
             inputs:
               filePath: scripts\githubpush.ps1
             env:
-              GITHUBPATH: $(GitHubPat)
+              GITHUBPAT: $(GitHubPat)
