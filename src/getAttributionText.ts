@@ -4,11 +4,13 @@ import {norgeLat, norgeLon, osloLat, osloLon} from './constants/bounds';
 const currentYear = new Date().getFullYear();
 
 export const getAttributionText = (centerPoint: L.LatLng, zoomLevel: number) => {
+  const copyrightString = `&copy; ${currentYear} Norkart AS`;
+
   var t_url = [
-    `&copy; ${currentYear} Norkart AS/Plan- og bygningsetaten, Oslo Kommune`,
-    `&copy; ${currentYear} Norkart AS/Geovekst og kommunene/OpenStreetMap/NASA, Meti`,
-    `&copy; ${currentYear} Norkart AS/Geovekst og kommunene/OpenStreetMap/NASA, Meti`,
-    `&copy; ${currentYear} Norkart AS/OpenStreetMap/EEA CLC2006`
+    `${copyrightString}/Plan- og bygningsetaten, Oslo Kommune`,
+    `${copyrightString}/Geovekst og kommunene/OpenStreetMap/NASA, Meti`,
+    `${copyrightString}/Geovekst og kommunene/OpenStreetMap/NASA, Meti`,
+    `${copyrightString}/OpenStreetMap/EEA CLC2006`
   ];
 
   //Filter based on zoom levels and area
@@ -49,7 +51,7 @@ export const getAttributionText = (centerPoint: L.LatLng, zoomLevel: number) => 
       }
     } catch (e) {}
   }
-  return '';
+  return copyrightString;
 };
 
 const containsPoint = (centerPoint: L.LatLng, kommuneLat: number[], kommuneLon: number[]) => {
