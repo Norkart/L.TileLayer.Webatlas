@@ -28,7 +28,7 @@ See <developer.norkart.no> for obtaining a trial token.
 
 ## Options
 
-- `mapType`: one of L.TileLayer.Webatlas.Type (Default: L.TileLayer.Webatlas.Type.VECTOR)
+- `mapType`: one of WebatlasTileLayerTypes (Default: WebatlasTileLayerTypes.VECTOR)
 - `apiKey`: a Webatlas API Token
 - `attributionPosition`: Position of the attribution text. Possible values are 'topleft', 'topright', 'bottomleft' or 'bottomright'. Default: 'bottomright'.
 
