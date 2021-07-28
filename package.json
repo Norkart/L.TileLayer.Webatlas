@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "jest --watch --env=jsdom",
-    "test:ci": "jest --env=jsdom --ci --reporters=default --reporters=jest-junit --coverage",
+    "test:ci": "jest --env=jsdom --ci --coverage",
     "start": "parcel demo/index.html",
     "coverage": "jest --env=jsdom --coverage",
     "build:test": "jest --env=jsdom",
@@ -85,6 +85,16 @@
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/build/"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "test",
+          "outputName": "junit.xml"
+        }
+      ]
     ]
   },
   "jest-junit": {
