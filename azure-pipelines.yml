@@ -58,6 +58,7 @@ stages:
                 build/**/*
                 package.json
                 package-lock.json
+                README.md
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
           - publish: $(Build.ArtifactStagingDirectory)
