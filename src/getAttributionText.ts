@@ -50,6 +50,7 @@ export const getAttributionText = (centerPoint: L.LatLng, zoomLevel: number) => 
       }
     } catch (e) {}
   }
+
   return copyrightText;
 };
 

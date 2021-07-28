@@ -1,0 +1,91 @@
+trigger:
+  - master
+pool:
+  name: Default
+
+variables:
+  isMasterBranch: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+
+stages:
+  - stage: BuildAndTest
+    jobs:
+      - job: BuildAndTest
+        steps:
+          - task: NodeTool@0
+            displayName: 'Use Node 11.x'
+            inputs:
+              versionSpec: 11.x
+
+          - task: Npm@1
+            displayName: 'Install packages'
+            inputs:
+              command: custom
+              verbose: false
+              customCommand: 'ci --prefer-offline --no-audit'
+
+          - task: Npm@1
+            displayName: 'npm test'
+            inputs:
+              command: custom
+              verbose: false
+              customCommand: 'run test:ci'
+
+          - task: PublishTestResults@2
+            displayName: 'Publish Test Results '
+            inputs:
+              testResultsFiles: test/junit.xml
+            condition: succeededOrFailed()
+
+          - task: PublishCodeCoverageResults@1
+            displayName: 'Publish code coverage results'
+            inputs:
+              codeCoverageTool: Cobertura
+              summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
+            condition: succeededOrFailed()
+
+          - task: Npm@1
+            displayName: 'npm build'
+            inputs:
+              command: custom
+              verbose: false
+              customCommand: 'run build --prefer-offline --no-audit'
+
+          - task: CopyFiles@2
+            displayName: 'Copy Files to artifact staging'
+            inputs:
+              SourceFolder: '$(System.DefaultWorkingDirectory)'
+              Contents: |
+                build/**/*
+                package.json
+                package-lock.json
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+          - publish: $(Build.ArtifactStagingDirectory)
+            artifact: webatlastile
+
+  - stage: ReleaseNPM
+    condition: and(succeeded(), eq(variables.isMasterBranch, true))
+
+    jobs:
+      - job: ReleaseNPM
+        workspace:
+          clean: all
+
+        steps:
+          - download: current
+            artifact: webatlastile
+
+          - task: Npm@1
+            displayName: 'npm publish'
+            inputs:
+              command: publish
+              workingDir: $(Pipeline.Workspace)\webatlastile
+              verbose: false
+              publishEndpoint: npmRegistryAtle
+
+          - task: PowerShell@2
+            displayName: 'Copy source to GitHub'
+            inputs:
+              filePath: scripts\githubpush.ps1
+            env:
+              GITHUBPAT: $(GitHubPat)
