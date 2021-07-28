@@ -8,17 +8,17 @@ Leaflet plugin to use Webatlas tilecache with correct attribution and API keys. 
 
    npm i leaflet-webatlastile
 
-2. Require what you need:
+2. Import what you need:
 
    import {webatlasTileLayer} from 'leaflet-webatlastile';
 
 3. Instantiate a new layer just as you would instantiate a new L.TileLayer, just remember the API token:
 
-   webatlasTileLayer({apikey: 'my-api-key'}).addTo(map);
+   webatlasTileLayer({apiKey: 'my-api-key'}).addTo(map);
 
 To specify another layer:
 
-    webatlasTileLayer({apikey: 'my-api-key', mapType: WebatlasTileLayerTypes.GREY}).addTo(map);
+    webatlasTileLayer({apiKey: 'my-api-key', mapType: WebatlasTileLayerTypes.GREY}).addTo(map);
 
 See demo/index.ts for example use.
 
@@ -32,7 +32,7 @@ See <developer.norkart.no> for obtaining a trial token.
 - `apiKey`: a Webatlas API Token
 - `attributionPosition`: Position of the attribution text. Possible values are 'topleft', 'topright', 'bottomleft' or 'bottomright'. Default: 'bottomright'.
 
-## Developent
+## Development
 
 1. Install dependencies: `npm install`
 2. Run `npm run start` to start a dev server, and edit files in the `/demo` folder
