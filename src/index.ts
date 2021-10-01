@@ -49,6 +49,12 @@ export class WebatlasTileLayer extends L.TileLayer {
     return this;
   }
 
+  onRemove(map: L.Map) {
+    this._map.off('moveend', this._onMapMoved, this);
+    L.TileLayer.prototype.onRemove.call(this, map);
+    return this;
+  }
+
   _onMapMoved() {
     const attributionText = getAttributionText(this._map.getCenter(), this._map.getZoom());
 
